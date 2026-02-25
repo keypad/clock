@@ -39,3 +39,10 @@ func TestError(t *testing.T) {
 		t.Fatal("expected error")
 	}
 }
+
+func TestZones(t *testing.T) {
+	text := clock.Zones()
+	if text != "cet cst est ist jst local mst pst utc" {
+		t.Fatalf("unexpected zones: %s", text)
+	}
+}

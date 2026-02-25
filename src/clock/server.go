@@ -9,6 +9,10 @@ import (
 func handler(write http.ResponseWriter, read *http.Request) {
 	write.Header().Set("content-type", "text/plain; charset=utf-8")
 	path := strings.Trim(read.URL.Path, "/")
+	if path == "zones" {
+		_, _ = write.Write([]byte(Zones() + "\n"))
+		return
+	}
 	if path == "" {
 		path = "local"
 	}

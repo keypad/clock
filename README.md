@@ -9,6 +9,7 @@
 
  ✓ one line timestamp output
  ✓ timezone aliases (utc/local/est/cst/mst/pst/cet/ist/jst)
+ ✓ alias listing at /zones
  ✓ local server mode for curl use
  ✓ zero external services
 
@@ -26,6 +27,7 @@
 
  curl http://127.0.0.1:4173/
  curl http://127.0.0.1:4173/utc
+ curl http://127.0.0.1:4173/zones
  curl http://127.0.0.1:4173/bad
 
 > stack?

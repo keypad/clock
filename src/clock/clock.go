@@ -2,6 +2,7 @@ package clock
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 	"time"
 )
@@ -60,4 +61,13 @@ func Render(name string, clock time.Time) (string, error) {
 
 func Help() string {
 	return "zones: utc local est cst mst pst cet ist jst"
+}
+
+func Zones() string {
+	list := make([]string, 0, len(zone))
+	for name := range zone {
+		list = append(list, name)
+	}
+	sort.Strings(list)
+	return strings.Join(list, " ")
 }
